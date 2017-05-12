@@ -3,9 +3,10 @@ PROJECT_DESCRIPTION = Authentication with Username/Password
 
 PROJECT_VERSION = 2.2
 
-BUILD_DEPS = emqttd cuttlefish
+BUILD_DEPS = emqttd cuttlefish clique
 dep_emqttd = git https://github.com/emqtt/emqttd emq22
 dep_cuttlefish = git https://github.com/emqtt/cuttlefish
+dep_clique = git https://github.com/turtleDeng/clique
 
 NO_AUTOPATCH = cuttlefish
 

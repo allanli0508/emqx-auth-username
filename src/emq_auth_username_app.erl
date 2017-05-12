@@ -29,9 +29,11 @@
 start(_Type, _Args) ->
     Userlist = application:get_env(?APP, userlist, []),
     emqttd_access_control:register_mod(auth, ?APP, Userlist),
+    emq_auth_username_cli:register_cli(),
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 stop(_State) ->
+    emq_auth_username_cli:unregister_cli(),
     emqttd_access_control:unregister_mod(auth, ?APP).
 
 %%--------------------------------------------------------------------
