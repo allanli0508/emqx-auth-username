@@ -33,8 +33,8 @@ start(_Type, _Args) ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 stop(_State) ->
-    emq_auth_username_cli:unregister_cli(),
-    emqttd_access_control:unregister_mod(auth, ?APP).
+    emqttd_access_control:unregister_mod(auth, ?APP),
+    emq_auth_username_cli:unregister_cli().
 
 %%--------------------------------------------------------------------
 %% Dummy Supervisor

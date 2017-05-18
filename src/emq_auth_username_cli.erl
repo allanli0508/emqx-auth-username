@@ -46,12 +46,13 @@ register_cmd() ->
     users_del().
 
 unregister_cli() ->
+    clique:unregister_usage(["users"]),
     unregister_cmd().
 
 unregister_cmd() ->
-    clique:unregister_cmd(["users", "list"]),
-    clique:unregister_cmd(["users", "add"]),
-    clique:unregister_cmd(["users", "del"]).
+    clique:unregister_command(["users", "list"]),
+    clique:unregister_command(["users", "add"]),
+    clique:unregister_command(["users", "del"]).
 
 users_list() ->
     Cmd = ["users", "list"],
